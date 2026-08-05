@@ -602,6 +602,12 @@ body.admin-view > :not(.admin-panel) {
 body.admin-view .admin-panel {
     display: grid;
     grid-template-columns: 84px minmax(0, 1fr);
+    transition: grid-template-columns 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+body.admin-view .admin-panel:has(.admin-sidebar:hover),
+body.admin-view .admin-panel:has(.admin-sidebar:focus-within) {
+    grid-template-columns: 260px minmax(0, 1fr);
 }
 
 .admin-sidebar {
@@ -610,7 +616,7 @@ body.admin-view .admin-panel {
     padding: 1.5rem;
     min-height: 100vh;
     box-shadow: 18px 0 45px rgba(4, 36, 21, 0.18);
-    overflow: visible;
+    overflow: hidden;
 }
 
 .admin-brand {
@@ -648,6 +654,10 @@ body.admin-view .admin-panel {
 
 .admin-sidebar:hover .admin-brand div,
 .admin-sidebar:focus-within .admin-brand div,
+.admin-sidebar:hover .admin-tab span,
+.admin-sidebar:focus-within .admin-tab span,
+.admin-sidebar:hover .admin-back span,
+.admin-sidebar:focus-within .admin-back span,
 .admin-tab:hover span,
 .admin-tab:focus-visible span,
 .admin-back:hover span,
@@ -706,6 +716,13 @@ body.admin-view .admin-panel {
 .admin-back:focus-visible {
     width: 205px;
     z-index: 4;
+}
+
+.admin-sidebar:hover .admin-tab,
+.admin-sidebar:focus-within .admin-tab,
+.admin-sidebar:hover .admin-back,
+.admin-sidebar:focus-within .admin-back {
+    width: 100%;
 }
 
 .admin-back {
@@ -1518,6 +1535,11 @@ body.admin-view .admin-panel {
     }
 
     body.admin-view .admin-panel {
+        grid-template-columns: 1fr;
+    }
+
+    body.admin-view .admin-panel:has(.admin-sidebar:hover),
+    body.admin-view .admin-panel:has(.admin-sidebar:focus-within) {
         grid-template-columns: 1fr;
     }
 
