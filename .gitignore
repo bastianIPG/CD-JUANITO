@@ -1,0 +1,9 @@
+.DS_Store
+node_modules/
+dist/
+build/
+.env
+.env.*
+verification_*.png
+debug_*.png
+cancha_recorrido_contactsheet.jpg

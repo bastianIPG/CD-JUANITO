@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="es" style="scroll-padding-top: 90px;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Club Deportivo Pullally - Sitio Oficial</title>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Dependencies -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+    
+    <!-- Navbar Institucional -->
+    <nav class="navbar">
+        <a href="#inicio" class="nav-brand">
+            <img src="escudo_real.png" alt="Escudo CDP" class="nav-logo">
+            <span class="nav-title">CD Pullally</span>
+        </a>
+        <div class="nav-links">
+            <a href="#inicio">Inicio</a>
+            <a href="#club">El Club</a>
+            <a href="#socio">Hazte Socio</a>
+            <a href="#arriendos">Servicios</a>
+            <a href="#actividades">Noticias</a>
+            <a href="#contacto">Contacto</a>
+        </div>
+        <button id="nav-login-button" class="nav-login-button" type="button" aria-label="Iniciar sesión de socio" title="Iniciar sesión">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5Zm0 2c-4.42 0-8 2.24-8 5v1h16v-1c0-2.76-3.58-5-8-5Z"/></svg>
+        </button>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="inicio" class="hero">
+        <img src="escudo_real.png" alt="Escudo Oficial Club Deportivo Pullally" id="hero-logo">
+        <h1>Bienvenidos al Club Deportivo Pullally</h1>
+        <p>Promoviendo el deporte, la historia y la comunidad en Papudo desde 1926.</p>
+        <div class="hero-buttons">
+            <a href="#socio" class="btn btn-secondary">Hazte Socio</a>
+            <a href="#arriendos" class="btn btn-outline">Consultar Arriendo</a>
+        </div>
+    </header>
+
+    <!-- Actividades y Noticias -->
+    <section id="actividades" class="section" style="background: white; border-bottom: 1px solid var(--color-border);">
+        <h2 class="section-title animate-on-scroll">Últimas Noticias</h2>
+        <p class="section-subtitle animate-on-scroll">Mantente al tanto de las actividades del club.</p>
+        
+        <div class="carousel-wrapper animate-on-scroll">
+            <div class="carousel-track-container">
+                <ul class="carousel-track">
+                    <li class="carousel-slide">
+                        <div class="card">
+                            <div style="height: 150px; background: #e2e8f0; border-radius: 6px; margin-bottom: 1rem; background-image: url('news1_trophy.jpg'); background-size: cover; background-position: center;"></div>
+                            <h4>Campeonato Aniversario</h4>
+                            <p style="font-size: 0.85rem; color: var(--color-text-light); margin-bottom: 1rem;">Te invitamos a participar de nuestro campeonato cuadrangular por los 98 años del club.</p>
+                            <a href="#" style="color: var(--color-primary); font-size: 0.9rem; font-weight: 600;">Ver detalles &rarr;</a>
+                        </div>
+                    </li>
+                    <li class="carousel-slide">
+                        <div class="card">
+                            <div style="height: 150px; background: #e2e8f0; border-radius: 6px; margin-bottom: 1rem; background-image: url('https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=300'); background-size: cover; background-position: center;"></div>
+                            <h4>Reunión de Socios</h4>
+                            <p style="font-size: 0.85rem; color: var(--color-text-light); margin-bottom: 1rem;">Citación a asamblea general ordinaria para definir proyectos del segundo semestre.</p>
+                            <a href="#" style="color: var(--color-primary); font-size: 0.9rem; font-weight: 600;">Ver detalles &rarr;</a>
+                        </div>
+                    </li>
+                    <li class="carousel-slide">
+                        <div class="card">
+                            <div style="height: 150px; background: #e2e8f0; border-radius: 6px; margin-bottom: 1rem; background-image: url('https://images.unsplash.com/photo-1511886929837-354d827aae26?auto=format&fit=crop&w=300'); background-size: cover; background-position: center;"></div>
+                            <h4>Inscripciones Serie Menor</h4>
+                            <p style="font-size: 0.85rem; color: var(--color-text-light); margin-bottom: 1rem;">Abiertas las inscripciones para la escuela de fútbol infantil. Cupos limitados.</p>
+                            <a href="#" style="color: var(--color-primary); font-size: 0.9rem; font-weight: 600;">Ver detalles &rarr;</a>
+                        </div>
+                    </li>
+                    <li class="carousel-slide">
+                        <div class="card">
+                            <div style="height: 150px; background: #e2e8f0; border-radius: 6px; margin-bottom: 1rem; background-image: url('https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=300'); background-size: cover; background-position: center;"></div>
+                            <h4>Nueva Indumentaria</h4>
+                            <p style="font-size: 0.85rem; color: var(--color-text-light); margin-bottom: 1rem;">Agradecemos a nuestros sponsors por los nuevos equipos para la categoría adulta.</p>
+                            <a href="#" style="color: var(--color-primary); font-size: 0.9rem; font-weight: 600;">Ver detalles &rarr;</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- El Club -->
+    <section id="club" class="section">
+        <h2 class="section-title animate-on-scroll">Nuestra Historia</h2>
+        <p class="section-subtitle animate-on-scroll">Más de 90 años aportando a la comunidad.</p>
+        <div class="grid-2">
+            <div class="card animate-on-scroll">
+                <h3 style="margin-bottom: 1rem; color: var(--color-primary);">Misión y Valores</h3>
+                <p style="color: var(--color-text-light);">El Club Deportivo Pullally, fundado el 26 de noviembre de 1926, tiene como misión fomentar la práctica deportiva, la integración social y los valores de compañerismo en la comunidad de Pullally y la comuna de Papudo.</p>
+            </div>
+            <div class="card animate-on-scroll">
+                <h3 style="margin-bottom: 1rem; color: var(--color-primary);">Ramas Deportivas</h3>
+                <ul style="color: var(--color-text-light); padding-left: 1.5rem;">
+                    <li>Rama Masculina Adulta</li>
+                    <li>Rama Femenina</li>
+                    <li>Categoría Senior</li>
+                    <li>Series Menores</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hazte Socio (Simulador PDF) -->
+    <section id="socio" class="section" style="background: white; border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);">
+        <h2 class="section-title animate-on-scroll">Hazte Socio</h2>
+        <p class="section-subtitle animate-on-scroll">Únete a nuestra familia y disfruta de beneficios exclusivos.</p>
+        
+        <div class="card animate-on-scroll" style="max-width: 600px; margin: 0 auto; text-align: center; padding: 2rem;">
+            <img src="socio_handshake.jpg" alt="Hazte Socio" style="max-width: 100%; height: auto; border-radius: 8px; margin-bottom: 1.5rem; max-height: 250px; object-fit: cover;">
+            <h3 style="margin-bottom: 1rem; color: var(--color-primary);">¡Sé parte de la institución!</h3>
+            <p style="color: var(--color-text-light); margin-bottom: 1.5rem;">Al hacerte socio, ayudas a financiar nuestras ramas deportivas y obtienes descuentos exclusivos en arriendo de canchas y sedes.</p>
+            <button id="open-socio-modal" class="btn btn-primary" style="width: 100%; max-width: 300px;">Completar Formulario</button>
+        </div>
+    </section>
+
+    <!-- Arriendos con Cancha 3D -->
+    <section id="arriendos" class="section">
+        <h2 class="section-title animate-on-scroll">Servicios y Arriendos</h2>
+        <p class="section-subtitle animate-on-scroll">Instalaciones de primer nivel para la comunidad.</p>
+        
+        <div class="grid-2">
+            <!-- Arriendo Cancha -->
+            <div class="card animate-on-scroll" style="padding: 1.5rem;">
+                <h3 style="margin-bottom: 1rem;">Cancha Principal</h3>
+                
+                <!-- PREVIEW CANCHA GALERIA -->
+                <button id="cancha-preview" class="cancha-preview-button" type="button" aria-label="Visualizar la cancha en vista inmersiva">
+                    <img id="cancha-preview-img" src="cancha_preview.jpg" alt="Vista Cancha Principal" style="width: 100%; height: 250px; object-fit: cover; display: block;">
+                    <span class="cancha-preview-cue" aria-hidden="true"></span>
+                </button>
+                
+                <p style="font-size: 0.95rem; color: var(--color-text-light); margin-bottom: 1rem;">
+                    Cancha de fútbol disponible para partidos amistosos y campeonatos. Cuenta con camarines y graderías.
+                </p>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; border-top: 1px solid var(--color-border); padding-top: 1rem;">
+                    <span style="font-weight: 600;">Valor Arriendo:</span>
+                    <span style="color: var(--color-primary); font-weight: bold;">Consultar</span>
+                </div>
+                <a href="https://wa.me/56912345678" target="_blank" class="btn btn-primary" style="width: 100%; display: block;">Consultar Disponibilidad</a>
+            </div>
+
+            <!-- Arriendo Sede -->
+            <div class="card animate-on-scroll" style="padding: 1.5rem;">
+                <h3 style="margin-bottom: 1rem;">Sede Social</h3>
+                <div style="width: 100%; height: 350px; background: #e2e8f0; border-radius: 8px; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; color: var(--color-text-light);">
+                    [Fotografía Sede Social]
+                </div>
+                <p style="font-size: 0.95rem; color: var(--color-text-light); margin-bottom: 1rem;">
+                    Amplio espacio modular ideal para eventos, reuniones comunitarias, cumpleaños y celebraciones familiares.
+                </p>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; border-top: 1px solid var(--color-border); padding-top: 1rem;">
+                    <span style="font-weight: 600;">Capacidad:</span>
+                    <span style="color: var(--color-primary); font-weight: bold;">100 personas</span>
+                </div>
+                <a href="https://wa.me/56912345678" target="_blank" class="btn btn-outline" style="width: 100%; display: block;">Solicitar Cotización</a>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Contacto -->
+    <section id="contacto" class="section">
+        <h2 class="section-title animate-on-scroll">Contacto</h2>
+        <p class="section-subtitle animate-on-scroll">¿Tienes dudas? Escríbenos.</p>
+        
+        <div class="card animate-on-scroll" style="max-width: 600px; margin: 0 auto; text-align: center;">
+            <p><strong>Dirección:</strong> Pullally, comuna de Papudo, Región de Valparaíso</p>
+            <p><strong>Correo:</strong> contacto@clubdeportivopullally.cl</p>
+            <div style="margin-top: 1.5rem;">
+                <a href="https://wa.me/56912345678" target="_blank" class="btn btn-primary">Hablar por WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Formulario Socio -->
+    <div id="socio-modal" class="modal">
+        <div class="modal-content card">
+            <button class="close-modal" type="button" aria-label="Cerrar formulario de inscripción">&times;</button>
+            <h3 style="margin-bottom: 1.5rem; text-align: center;">Formulario de Inscripción</h3>
+            <form onsubmit="generarCertificado(event)">
+                <div class="grid-2" style="gap: 1rem;">
+                    <div class="form-group">
+                        <label>Nombre Completo</label>
+                        <input type="text" id="nombre" class="form-control" required placeholder="Ej: Juan Pérez">
+                    </div>
+                    <div class="form-group">
+                        <label>RUT</label>
+                        <input type="text" id="rut" class="form-control" required placeholder="12.345.678-9">
+                    </div>
+                </div>
+                <div class="grid-2" style="gap: 1rem;">
+                    <div class="form-group">
+                        <label>Fecha de Nacimiento</label>
+                        <input type="date" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Teléfono</label>
+                        <input type="tel" class="form-control" required placeholder="+56 9 1234 5678">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Dirección</label>
+                    <input type="text" class="form-control" required placeholder="Calle, Número, Pullally">
+                </div>
+                <div class="form-group">
+                    <label>Correo Electrónico</label>
+                    <input type="email" class="form-control" required placeholder="correo@ejemplo.com">
+                </div>
+                
+                <div style="background: #f0fff4; border: 1px solid #9ae6b4; padding: 1rem; border-radius: 6px; margin: 1.5rem 0;">
+                    <div style="display: flex; justify-content: space-between; font-weight: bold; margin-bottom: 0.25rem;">
+                        <span>Inscripción Cuota Inicial</span>
+                        <span style="color: var(--color-primary)">$5.000 CLP</span>
+                    </div>
+                    <p style="font-size: 0.85rem; color: #4a5568;">Simulación de pago vía Webpay Plus / Flow. Al pagar se generará su certificado PDF oficial.</p>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Pagar y Generar Certificado</button>
+            </form>
+            <div id="qrcode" style="display: none; margin-top: 1rem; justify-content: center;"></div>
+        </div>
+    </div>
+
+    <!-- Modal Galería Cancha (Estilo Nativo Apple) -->
+    <div id="cancha-gallery-modal" class="fullscreen-gallery" role="dialog" aria-modal="true" aria-label="Vista inmersiva de la cancha" aria-hidden="true">
+        <div class="gallery-backdrop"></div>
+        <div class="gallery-header">
+            <button class="close-modal-gallery" type="button" aria-label="Cerrar galería de cancha">&times; Cerrar</button>
+        </div>
+
+        <div class="simple-field-gallery" aria-live="polite">
+            <div class="simple-gallery-stage">
+                <img id="field-gallery-main" src="cancha_preview.jpg" alt="Vista aérea de la cancha principal">
+            </div>
+            <div class="simple-gallery-thumbs" aria-label="Fotos disponibles de la cancha">
+                <button class="field-thumb active" type="button" data-full-src="cancha_preview.jpg" data-full-alt="Vista aérea de la cancha principal" aria-label="Ver vista aérea de la cancha">
+                    <img src="cancha_preview.jpg" alt="">
+                </button>
+                <button class="field-thumb" type="button" data-full-src="cancha_inmersiva_primera_persona.jpg" data-full-alt="Vista desde dentro de la cancha principal" aria-label="Ver vista desde dentro de la cancha">
+                    <img src="cancha_inmersiva_primera_persona.jpg" alt="">
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Acceso Socios Demo -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content card login-modal-content" role="document">
+            <button class="close-login-modal" type="button" aria-label="Cerrar acceso socios">&times;</button>
+            <h3 style="margin-bottom: 0.75rem; text-align: center;">Acceso Socios</h3>
+            <p class="login-demo-copy">Vista demo para socios registrados. No valida credenciales reales.</p>
+            <p class="login-demo-hint">Credenciales demo: usuario <strong>root</strong> y clave <strong>1</strong>.</p>
+            <form id="login-demo-form">
+                <div class="form-group">
+                    <label for="login-user">Correo o RUT</label>
+                    <input type="text" id="login-user" class="form-control" autocomplete="username" placeholder="socio@ejemplo.com">
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Contraseña</label>
+                    <input type="password" id="login-password" class="form-control" autocomplete="current-password" placeholder="Contraseña">
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Ingresar</button>
+                <button type="button" class="login-recovery-link">Recuperar contraseña</button>
+            </form>
+            <p id="login-demo-status" class="login-demo-status" role="status" aria-live="polite"></p>
+        </div>
+    </div>
+
+    <!-- Panel Administración Demo -->
+    <section id="admin-panel" class="admin-panel" aria-label="Panel de administración demo">
+        <aside class="admin-sidebar">
+            <div class="admin-brand">
+                <img src="escudo_real.png" alt="" aria-hidden="true">
+                <div>
+                    <strong>Gestión CDP</strong>
+                    <span>Panel demo</span>
+                </div>
+            </div>
+            <nav class="admin-tabs" aria-label="Secciones del panel">
+                <button class="admin-tab active" type="button" data-admin-tab="resumen" aria-label="Resumen" title="Resumen">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11.5 12 5l8 6.5V20a1 1 0 0 1-1 1h-5v-6h-4v6H5a1 1 0 0 1-1-1v-8.5Z"/></svg>
+                    <span>Resumen</span>
+                </button>
+                <button class="admin-tab" type="button" data-admin-tab="socios" aria-label="Socios" title="Socios">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 11a4 4 0 1 1 0-8 4 4 0 0 1 0 8Zm8.5 1a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7ZM2 21a6 6 0 0 1 12 0H2Zm11.5 0a7.5 7.5 0 0 0-1.6-4.6A5 5 0 0 1 22 21h-8.5Z"/></svg>
+                    <span>Socios</span>
+                </button>
+                <button class="admin-tab" type="button" data-admin-tab="finanzas" aria-label="Finanzas" title="Finanzas">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19h16v2H4v-2Zm1-8h3v6H5v-6Zm5-6h3v12h-3V5Zm5 4h3v8h-3V9Z"/></svg>
+                    <span>Finanzas</span>
+                </button>
+                <button class="admin-tab" type="button" data-admin-tab="arriendos" aria-label="Arriendos" title="Arriendos">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h2v3h6V2h2v3h3a1 1 0 0 1 1 1v15a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h3V2Zm12 8H5v10h14V10ZM5 8h14V7H5v1Z"/></svg>
+                    <span>Arriendos</span>
+                </button>
+                <button class="admin-tab" type="button" data-admin-tab="actividades" aria-label="Noticias" title="Noticias">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1Zm2 4v2h12V8H6Zm0 4v2h8v-2H6Zm0 4v2h11v-2H6Z"/></svg>
+                    <span>Noticias</span>
+                </button>
+            </nav>
+            <button id="back-to-site" class="admin-back" type="button" aria-label="Volver a la portada" title="Volver a la portada">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 6 4 12l6 6v-4h10v-4H10V6Z"/></svg>
+                <span>Volver a la portada</span>
+            </button>
+        </aside>
+
+        <main class="admin-main">
+            <div class="admin-topbar">
+                <div>
+                    <p class="admin-kicker">Simulación visual</p>
+                    <h2>Panel de administración</h2>
+                </div>
+                <button id="back-to-site-mobile" class="admin-back admin-back-mobile" type="button">Volver</button>
+            </div>
+            <p class="admin-demo-note">Todos los datos de este panel son de prueba y sólo viven durante esta sesión.</p>
+
+            <section class="admin-pane active" data-admin-pane="resumen">
+                <div class="admin-section-head">
+                    <h3>Inicio</h3>
+                    <span>Resumen operativo</span>
+                </div>
+                <div class="admin-metrics">
+                    <div class="admin-metric"><span>Total socios</span><strong>128</strong></div>
+                    <div class="admin-metric"><span>Ingresos del mes</span><strong>$1.240.000</strong></div>
+                    <div class="admin-metric"><span>Arriendos próximos</span><strong>9</strong></div>
+                    <div class="admin-metric"><span>Noticias publicadas</span><strong id="admin-news-count">4</strong></div>
+                </div>
+                <div class="admin-list">
+                    <article><strong>Cuotas al día</strong><span>92 socios activos con pago vigente</span></article>
+                    <article><strong>Cancha principal</strong><span>Próxima reserva: sábado 18:00</span></article>
+                    <article><strong>Contenido público</strong><span id="admin-summary-news">4 noticias visibles en portada</span></article>
+                </div>
+            </section>
+
+            <section class="admin-pane" data-admin-pane="socios">
+                <div class="admin-section-head">
+                    <h3>Socios</h3>
+                    <span>128 registros de ejemplo</span>
+                </div>
+                <div class="admin-table">
+                    <div class="admin-row admin-row-head"><span>Nombre</span><span>Estado</span><span>Cuota</span></div>
+                    <div class="admin-row"><span>María González</span><span>Activa</span><span>Al día</span></div>
+                    <div class="admin-row"><span>Carlos Rojas</span><span>Activa</span><span>Pendiente</span></div>
+                    <div class="admin-row"><span>Fernanda Silva</span><span>Nueva</span><span>Inicial pagada</span></div>
+                </div>
+            </section>
+
+            <section class="admin-pane" data-admin-pane="finanzas">
+                <div class="admin-section-head">
+                    <h3>Finanzas</h3>
+                    <span>Valores ficticios</span>
+                </div>
+                <div class="finance-grid">
+                    <div><span>Cuotas recibidas</span><strong>$820.000</strong></div>
+                    <div><span>Arriendos cancha</span><strong>$360.000</strong></div>
+                    <div><span>Pagos pendientes</span><strong>$145.000</strong></div>
+                </div>
+                <div class="finance-charts">
+                    <figure class="finance-chart">
+                        <figcaption>Evolución mensual de ingresos</figcaption>
+                        <svg viewBox="0 0 360 180" role="img" aria-labelledby="income-chart-title income-chart-desc">
+                            <title id="income-chart-title">Ingresos mensuales de prueba</title>
+                            <desc id="income-chart-desc">Línea ascendente con ingresos ficticios entre marzo y agosto.</desc>
+                            <g class="chart-grid">
+                                <line x1="36" y1="30" x2="330" y2="30"></line>
+                                <line x1="36" y1="75" x2="330" y2="75"></line>
+                                <line x1="36" y1="120" x2="330" y2="120"></line>
+                            </g>
+                            <polyline class="chart-line" points="36,126 94,112 152,92 210,104 268,66 326,44"></polyline>
+                            <g class="chart-points">
+                                <circle cx="36" cy="126" r="4"></circle><circle cx="94" cy="112" r="4"></circle><circle cx="152" cy="92" r="4"></circle><circle cx="210" cy="104" r="4"></circle><circle cx="268" cy="66" r="4"></circle><circle cx="326" cy="44" r="4"></circle>
+                            </g>
+                            <g class="chart-labels">
+                                <text x="36" y="158">Mar</text><text x="94" y="158">Abr</text><text x="152" y="158">May</text><text x="210" y="158">Jun</text><text x="268" y="158">Jul</text><text x="326" y="158">Ago</text>
+                            </g>
+                        </svg>
+                        <p>Mar $640k · Abr $710k · May $880k · Jun $790k · Jul $1.05M · Ago $1.24M</p>
+                    </figure>
+                    <figure class="finance-chart finance-donut">
+                        <figcaption>Distribución de pagos</figcaption>
+                        <svg viewBox="0 0 180 180" role="img" aria-labelledby="payment-chart-title payment-chart-desc">
+                            <title id="payment-chart-title">Distribución de pagos de prueba</title>
+                            <desc id="payment-chart-desc">Cuotas 64 por ciento, arriendos 28 por ciento, pendientes 8 por ciento.</desc>
+                            <circle class="donut-base" cx="90" cy="90" r="58"></circle>
+                            <circle class="donut-segment cuotas" cx="90" cy="90" r="58"></circle>
+                            <circle class="donut-segment arriendos" cx="90" cy="90" r="58"></circle>
+                            <circle class="donut-segment pendientes" cx="90" cy="90" r="58"></circle>
+                            <text x="90" y="86" text-anchor="middle">64%</text>
+                            <text x="90" y="105" text-anchor="middle">cuotas</text>
+                        </svg>
+                        <ul class="chart-legend">
+                            <li><span class="legend-dot cuotas"></span>Cuotas</li>
+                            <li><span class="legend-dot arriendos"></span>Arriendos</li>
+                            <li><span class="legend-dot pendientes"></span>Pendientes</li>
+                        </ul>
+                    </figure>
+                </div>
+                <div class="admin-section-head payments-head">
+                    <h3>Historial de pagos</h3>
+                    <span>Datos de prueba</span>
+                </div>
+                <div class="admin-table payment-history">
+                    <div class="admin-row payment-row admin-row-head"><span>Fecha</span><span>Socio</span><span>Concepto</span><span>Monto</span><span>Estado</span></div>
+                    <div class="admin-row payment-row"><span>05/08</span><span>María González</span><span>Cuota mensual</span><span>$10.000</span><span>Pagado</span></div>
+                    <div class="admin-row payment-row"><span>04/08</span><span>Carlos Rojas</span><span>Arriendo cancha</span><span>$45.000</span><span>Pendiente</span></div>
+                    <div class="admin-row payment-row"><span>02/08</span><span>Fernanda Silva</span><span>Inscripción</span><span>$5.000</span><span>Pagado</span></div>
+                </div>
+            </section>
+
+            <section class="admin-pane" data-admin-pane="arriendos">
+                <div class="admin-section-head">
+                    <h3>Calendario cancha</h3>
+                    <span>Reservas demo</span>
+                </div>
+                <div class="booking-calendar" aria-label="Calendario de reservas de agosto 2026">
+                    <div class="calendar-weekdays" aria-hidden="true"><span>L</span><span>M</span><span>M</span><span>J</span><span>V</span><span>S</span><span>D</span></div>
+                    <div class="calendar-grid">
+                        <span class="calendar-empty"></span><span class="calendar-empty"></span><span class="calendar-empty"></span><span class="calendar-empty"></span><span class="calendar-empty"></span>
+                        <button type="button" class="calendar-day">1</button>
+                        <button type="button" class="calendar-day">2</button>
+                        <button type="button" class="calendar-day">3</button>
+                        <button type="button" class="calendar-day">4</button>
+                        <button type="button" class="calendar-day has-booking active" data-booking-name="María" data-booking-time="18:00 - 19:30" data-booking-place="Cancha principal">5<span></span></button>
+                        <button type="button" class="calendar-day has-booking" data-booking-name="Serie adulta" data-booking-time="20:00 - 21:30" data-booking-place="Cancha principal">6<span></span></button>
+                        <button type="button" class="calendar-day">7</button>
+                        <button type="button" class="calendar-day has-booking" data-booking-name="Rama femenina" data-booking-time="10:00 - 11:30" data-booking-place="Cancha principal">8<span></span></button>
+                        <button type="button" class="calendar-day">9</button>
+                        <button type="button" class="calendar-day">10</button>
+                        <button type="button" class="calendar-day">11</button>
+                        <button type="button" class="calendar-day">12</button>
+                        <button type="button" class="calendar-day has-booking" data-booking-name="Familia Rojas" data-booking-time="19:00 - 22:00" data-booking-place="Sede social">13<span></span></button>
+                        <button type="button" class="calendar-day">14</button>
+                        <button type="button" class="calendar-day">15</button>
+                        <button type="button" class="calendar-day">16</button>
+                        <button type="button" class="calendar-day">17</button>
+                        <button type="button" class="calendar-day">18</button>
+                        <button type="button" class="calendar-day">19</button>
+                        <button type="button" class="calendar-day">20</button>
+                        <button type="button" class="calendar-day">21</button>
+                        <button type="button" class="calendar-day">22</button>
+                        <button type="button" class="calendar-day">23</button>
+                        <button type="button" class="calendar-day">24</button>
+                        <button type="button" class="calendar-day">25</button>
+                        <button type="button" class="calendar-day">26</button>
+                        <button type="button" class="calendar-day">27</button>
+                        <button type="button" class="calendar-day">28</button>
+                        <button type="button" class="calendar-day">29</button>
+                        <button type="button" class="calendar-day">30</button>
+                        <button type="button" class="calendar-day">31</button>
+                    </div>
+                    <aside id="booking-detail" class="booking-detail" aria-live="polite">
+                        <span>Reserva seleccionada</span>
+                        <strong>María</strong>
+                        <p>18:00 - 19:30 · Cancha principal</p>
+                    </aside>
+                </div>
+            </section>
+
+            <section class="admin-pane" data-admin-pane="actividades">
+                <div class="admin-section-head">
+                    <h3>Noticias</h3>
+                    <span>Publicación local demo</span>
+                </div>
+                <form id="admin-news-form" class="admin-news-form">
+                    <div class="form-group">
+                        <label for="admin-news-title">Título</label>
+                        <input id="admin-news-title" class="form-control" type="text" placeholder="Ej: Reunión extraordinaria" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="admin-news-body">Resumen</label>
+                        <textarea id="admin-news-body" class="form-control" rows="3" placeholder="Escribe un resumen breve..." required></textarea>
+                    </div>
+                    <button class="btn btn-primary" type="submit">Publicar noticia demo</button>
+                    <p id="admin-news-status" class="login-demo-status" role="status" aria-live="polite"></p>
+                </form>
+                <div class="admin-list">
+                    <article><strong>Campeonato aniversario</strong><span>Publicado · 24 inscritos</span></article>
+                    <article><strong>Reunión de socios</strong><span>Borrador · viernes 19:00</span></article>
+                    <article><strong>Arriendo cancha</strong><span>5 solicitudes esta semana</span></article>
+                </div>
+            </section>
+        </main>
+        <nav class="admin-mobile-nav" aria-label="Navegación móvil del panel">
+            <button class="admin-mobile-tab active" type="button" data-admin-tab="resumen" aria-label="Resumen">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11.5 12 5l8 6.5V20a1 1 0 0 1-1 1h-5v-6h-4v6H5a1 1 0 0 1-1-1v-8.5Z"/></svg>
+                <span>Inicio</span>
+            </button>
+            <button class="admin-mobile-tab" type="button" data-admin-tab="socios" aria-label="Socios">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 11a4 4 0 1 1 0-8 4 4 0 0 1 0 8Zm8.5 1a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7ZM2 21a6 6 0 0 1 12 0H2Zm11.5 0a7.5 7.5 0 0 0-1.6-4.6A5 5 0 0 1 22 21h-8.5Z"/></svg>
+                <span>Socios</span>
+            </button>
+            <button class="admin-mobile-tab" type="button" data-admin-tab="finanzas" aria-label="Finanzas">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19h16v2H4v-2Zm1-8h3v6H5v-6Zm5-6h3v12h-3V5Zm5 4h3v8h-3V9Z"/></svg>
+                <span>Finanzas</span>
+            </button>
+            <button class="admin-mobile-tab" type="button" data-admin-tab="arriendos" aria-label="Arriendos">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h2v3h6V2h2v3h3a1 1 0 0 1 1 1v15a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h3V2Zm12 8H5v10h14V10ZM5 8h14V7H5v1Z"/></svg>
+                <span>Arriendos</span>
+            </button>
+            <button class="admin-mobile-tab" type="button" data-admin-tab="actividades" aria-label="Noticias">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1Zm2 4v2h12V8H6Zm0 4v2h8v-2H6Zm0 4v2h11v-2H6Z"/></svg>
+                <span>Noticias</span>
+            </button>
+        </nav>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Club Deportivo Pullally. Todos los derechos reservados.</p>
+        <button id="footer-admin-access" class="footer-admin-access" type="button">Acceso gestión</button>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="main.js"></script>
+</body>
+</html>
