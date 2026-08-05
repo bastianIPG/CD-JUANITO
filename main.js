@@ -324,15 +324,57 @@ function initGallery() {
 function initScrollAnimation() {
     const navbar = document.querySelector('.navbar');
     const heroLogo = document.querySelector('#hero-logo');
-    
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 80) {
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const navLinks = navbar ? navbar.querySelectorAll('.nav-links a') : [];
+    const threshold = 90;
+
+    if (!navbar || !heroLogo) return;
+
+    const closeMobileMenu = (releaseFocus = false) => {
+        navbar.classList.remove('menu-open');
+        if (mobileMenuToggle) mobileMenuToggle.setAttribute('aria-expanded', 'false');
+        if (releaseFocus && mobileMenuToggle && document.activeElement === mobileMenuToggle) {
+            mobileMenuToggle.blur();
+        }
+    };
+
+    const updateNavState = () => {
+        if (window.scrollY > threshold) {
             navbar.classList.add('scrolled');
             heroLogo.classList.add('scrolled');
         } else {
             navbar.classList.remove('scrolled');
             heroLogo.classList.remove('scrolled');
+            closeMobileMenu(true);
         }
+    };
+
+    updateNavState();
+    window.addEventListener('scroll', updateNavState, { passive: true });
+
+    if (mobileMenuToggle) {
+        mobileMenuToggle.addEventListener('click', () => {
+            if (!navbar.classList.contains('scrolled')) return;
+            const isOpen = navbar.classList.toggle('menu-open');
+            mobileMenuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            if (!isOpen) mobileMenuToggle.blur();
+        });
+    }
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => closeMobileMenu(true));
+    });
+
+    document.addEventListener('pointerdown', (event) => {
+        if (!navbar.classList.contains('menu-open')) return;
+        if (navbar.contains(event.target)) return;
+        closeMobileMenu(true);
+    });
+
+    window.addEventListener('keydown', (event) => {
+        if (event.key !== 'Escape') return;
+        if (!navbar.classList.contains('menu-open')) return;
+        closeMobileMenu(true);
     });
 }
 
